@@ -12,6 +12,9 @@ class JsonPacket{
     constructor() {
         jsonObject = JSONObject()
     }
+    constructor(jsonObject: JSONObject) {
+        this.jsonObject = jsonObject
+    }
     constructor(string: String) {
         jsonObject = JSONObject(string)
     }

@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory
  * Created by Codetector on 2017/3/11.
  * Project Jet
  */
-class PacketLengthHeaderDecoder(maxLength: Int) : LengthFieldBasedFrameDecoder(maxLength, 0, 4, 0, 4) {
+class PacketLengthBasedDecoder(maxLength: Int) : LengthFieldBasedFrameDecoder(maxLength, 0, 4, 0, 0) {
     companion object {
-        private val logger = LoggerFactory.getLogger(PacketLengthHeaderDecoder::class.java)
+        private val logger = LoggerFactory.getLogger(PacketLengthBasedDecoder::class.java)
     }
     override fun decode(ctx: ChannelHandlerContext?, `in`: ByteBuf?): Any? {
         try {

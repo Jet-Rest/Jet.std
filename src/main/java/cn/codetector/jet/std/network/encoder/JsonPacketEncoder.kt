@@ -4,17 +4,16 @@ import cn.codetector.jet.std.network.packet.JsonPacket
 import cn.codetector.jet.std.network.packet.PureTextPacket
 import io.netty.channel.ChannelHandlerContext
 import io.netty.handler.codec.MessageToMessageEncoder
-import org.slf4j.LoggerFactory
 
 /**
- * Created by Codetector on 2017/3/12.
+ * Created by Codetector on 2017/3/14.
  * Project Jet
  */
-class JsonPacketEncoder : MessageToMessageEncoder<JsonPacket>() {
-    companion object {
-        private val logger = LoggerFactory.getLogger(JsonPacketEncoder::class.java)
+class JsonPacketEncoder: MessageToMessageEncoder<JsonPacket>() {
+    public override fun encode(ctx: ChannelHandlerContext?, msg: JsonPacket, out: MutableList<Any>) {
+        val textPacket = PureTextPacket(msg.jsonObject.encode())
+        textPacket.headerObject.put("type", "json")
+        out.add(textPacket)
     }
-    public override fun encode(ctx: ChannelHandlerContext, msg: JsonPacket, out: MutableList<Any>) {
-        out.add(PureTextPacket(msg.jsonObject.encode()))
-    }
+
 }

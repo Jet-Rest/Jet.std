@@ -8,6 +8,7 @@ import cn.codetector.jet.jetsimplejson.JSONObject
  * Project Jet
  */
 class JsonPacket{
+    var headerObject = JSONObject().put("type","json")
     val jsonObject: JSONObject
     constructor() {
         jsonObject = JSONObject()

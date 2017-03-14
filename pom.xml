@@ -9,7 +9,7 @@
     <version>1.0.1-SNAPSHOT</version>
 
     <properties>
-        <kotlin.version>1.1.0</kotlin.version>
+        <kotlin.version>1.1.1</kotlin.version>
         <netty.version>4.1.8.Final</netty.version>
         <dokka.version>0.9.13</dokka.version>
         <junit.version>5.0.0-M3</junit.version>

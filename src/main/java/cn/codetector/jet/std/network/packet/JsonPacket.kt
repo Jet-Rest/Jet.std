@@ -20,4 +20,8 @@ class JsonPacket{
         jsonObject = JSONObject(string)
     }
     constructor(pureTextPacket: PureTextPacket) : this(pureTextPacket.stringContent)
+
+    override fun toString(): String {
+        return "JsonPacket: " + jsonObject.toString()
+    }
 }
